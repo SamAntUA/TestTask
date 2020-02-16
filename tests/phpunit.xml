@@ -1,0 +1,8 @@
+<phpunit>
+    <filter>
+      <whitelist processUncoveredFilesFromWhitelist="false">
+        <directory suffix=".php">../</directory>
+        <file>DbtableUser.php</file>
+      </whitelist>
+    </filter>
+</phpunit>
