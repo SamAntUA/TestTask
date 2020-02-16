@@ -29,7 +29,7 @@ class DbtableUserTest extends TestCase
      * @param string $sql
      * @dataProvider additionProviderForInsert
      */
-    public function testInsert($name, $lastName, $email, $sql)
+    public function testInsert(string $name, string $lastName, string $email, string $sql): void
     {
         $this->pdoMock
             ->expects($this->once())
@@ -53,7 +53,7 @@ class DbtableUserTest extends TestCase
      * @param string $sql
      * @dataProvider additionProviderForUpdate()
      */
-    public function testUpdate($id, $name, $lastName, $email, $sql)
+    public function testUpdate(int $id, string $name, string $lastName, string $email, string $sql): void
     {
         $this->pdoMock
             ->expects($this->once())
@@ -76,7 +76,7 @@ class DbtableUserTest extends TestCase
      * @param array $expectedFetchResult
      * @dataProvider additionProviderForSelect
      */
-    public function testSelect($id, $sql, $pdoStatementMock, $expectedFetchResult)
+    public function testSelect(int $id, string $sql, PDOStatement $pdoStatementMock, array $expectedFetchResult): void
     {
         $this->pdoMock
             ->expects($this->once())
@@ -106,7 +106,7 @@ class DbtableUserTest extends TestCase
      * @param string $sql
      * @dataProvider additionProviderForDelete
      */
-    public function testDelete($id, $sql)
+    public function testDelete(int $id, string $sql): void
     {
         $this->pdoMock
             ->expects($this->once())

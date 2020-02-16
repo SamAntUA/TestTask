@@ -13,36 +13,19 @@ $dbh = $dbcon->pdoConnect (DB_HOST, DB_NAME, DB_USER, DB_PASS);
 
 $tblUser = new DbtableUser($dbh);
 
-try {
-    $resIns = $tblUser->insert("Alice","Wonderland","alice.w@gmail.com");
-    if ($resIns)
-        echo ("Строка успешно добавлена!<br />");
-} catch (PDOException $e) {
-    echo ("Добавление строк. Ошибка ".$e);
-}
+$resIns = $tblUser->insert("Alice","Wonderland","alice.w@gmail.com");
+if ($resIns)
+    echo ("Строка успешно добавлена!<br />");
 
-try {
-    $resUpd = $tblUser->update(2,"Alice","Zonderland","alice.z@gmail.com");
-    if ($resUpd)
-        echo ("Строка успешно обновлена!<br />");
-} catch (PDOException $e) {
-    echo ("Обновление строк. Ошибка ".$e);
-}
+$resUpd = $tblUser->update(2,"Alice","Zonderland","alice.z@gmail.com");
+if ($resUpd)
+    echo ("Строка успешно обновлена!<br />");
 
-try {
-    $resSel = $tblUser->select(1);
-    var_dump($resSel);
-    echo("<br />");
-    if ($resSel)
-        echo ("Строки выведены успешно!<br />");
-} catch (PDOException $e) {
-    echo ("Выведение строк. Ошибка ".$e);
-}
+$resSel = $tblUser->select(1);
+var_dump($resSel);
+if ($resSel)
+    echo ("<br />Строки выведены успешно!<br />");
 
-try {
-    $resDel = $tblUser->delete(3);
-    if ($resDel)
-        echo ("Строка успешно удалена!<br />");
-} catch (PDOException $e) {
-    echo ("Удаление строк. Ошибка ".$e);
-}
+$resDel = $tblUser->delete(3);
+if ($resDel)
+    echo ("Строка успешно удалена!<br />");
