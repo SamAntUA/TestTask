@@ -1,7 +1,6 @@
 <?php
 
 require_once ('../DbtableUser.php');
-require_once ('../DatabaseConnect.php');
 
 use PHPUnit\Framework\TestCase;
 
